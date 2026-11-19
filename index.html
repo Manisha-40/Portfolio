@@ -401,7 +401,7 @@ document.addEventListener('click',e=>{const modalBtn=e.target.closest('[data-mod
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('#modal-root').children.length)closeModal();});
 window.addEventListener('hashchange',showRoute);
 window.addEventListener('scroll',()=>{const max=Math.max(1,document.documentElement.scrollHeight-window.innerHeight);$('#scroll-progress-fill').style.width=(window.scrollY/max*100)+'%';},{passive:true});
-showRoute();
+if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',showRoute,{once:true});}else{showRoute();}
 </script>
 </body>
 </html>
