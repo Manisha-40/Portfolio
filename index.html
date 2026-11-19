@@ -66,7 +66,15 @@
 @media(max-width:900px){.genai-showcase{padding-top:72px;padding-bottom:68px}.genai-top{display:block}.genai-top .text-link{display:inline-flex;margin-top:17px}.genai-grid{gap:13px}.genai-grid .card-body h3{font-size:17px}}
 @media(max-width:650px){.genai-showcase{padding-top:62px;padding-bottom:65px}.genai-grid{grid-template-columns:1fr;gap:15px}.genai-grid .project-art{aspect-ratio:1.6}.genai-grid .card-body h3{font-size:21px}.genai-grid .card-body p{font-size:13px}}
 </style>
-  <script>/* Manisha Jena · Interactive portfolio design v2
+  </head>
+<body>
+  <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-fill"></span></div>
+  <div id="site-header"></div>
+  <div id="app" tabindex="-1"></div>
+  <div id="site-footer"></div>
+  <div id="modal-root" aria-live="polite"></div>
+  <div id="toast-root" role="status" aria-live="polite"></div>
+<script>/* Manisha Jena · Interactive portfolio design v2
    Hash routes let the full prototype work by simply opening index.html.
    Content in PROJECTS and JOURNEY is intentionally separate from the UI.
 */
@@ -289,13 +297,5 @@ window.addEventListener('hashchange',showRoute);
 window.addEventListener('scroll',()=>{const max=Math.max(1,document.documentElement.scrollHeight-window.innerHeight);$('#scroll-progress-fill').style.width=(window.scrollY/max*100)+'%';},{passive:true});
 showRoute();
 </script>
-</head>
-<body>
-  <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-fill"></span></div>
-  <div id="site-header"></div>
-  <div id="app" tabindex="-1"></div>
-  <div id="site-footer"></div>
-  <div id="modal-root" aria-live="polite"></div>
-  <div id="toast-root" role="status" aria-live="polite"></div>
 </body>
 </html>
