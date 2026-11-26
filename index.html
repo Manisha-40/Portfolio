@@ -123,7 +123,7 @@
 @media(max-width:900px){.journey-layout{grid-template-columns:1fr;gap:20px}.journey-menu{grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.journey-tab{padding:11px;display:flex;flex-direction:column;gap:4px;align-items:start}.journey-tab .yr{font-size:10px}.journey-tab strong{font-size:12px}.journey-story{min-height:0}.life-photo-grid{grid-auto-rows:205px}.about-personal-photo{height:380px}}
 @media(max-width:650px){.journey-menu{grid-template-columns:repeat(2,minmax(0,1fr))}.journey-tab{padding:13px}.journey-story{padding:24px 21px}.journey-story .journey-lede{font-size:13px}.journey-story-main:has(.journey-photo){grid-template-columns:1fr}.journey-photo{max-width:320px}.journey-photo img{height:230px}.about-personal-photo{height:330px}.about-photo-stamp{bottom:0}.life-gallery-intro{display:block}.life-photo-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:205px;gap:10px}.life-photo.featured{grid-column:span 2;grid-row:span 1}.life-photo figcaption{left:12px;bottom:12px;right:11px}.life-photo figcaption strong{font-size:12px}.life-photo figcaption span{font-size:10px}.genai-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.genai-grid .card-body{padding:9px 5px 6px}.genai-grid .card-body h3{font-size:13px}.genai-grid .card-body p{font-size:11px}.genai-grid .project-art{aspect-ratio:1.5}.genai-grid .project-category{font-size:7px}.genai-grid .project-card{padding:6px}.genai-grid .card-bottom{display:flex;flex-direction:column;align-items:flex-start}.genai-grid .project-case-link{font-size:10px}.work-grid .genai-card .project-art{height:170px}}
 @media(max-width:390px){.genai-grid{grid-template-columns:1fr}.genai-grid .project-art{aspect-ratio:1.8}.genai-grid .card-body h3{font-size:16px}.genai-grid .card-body p{font-size:12px}}
-.illu-cocreate{flex-direction:column;align-items:center;gap:3px;padding-top:24px;background:linear-gradient(145deg,#e7dbf9,#f7f2fd);color:var(--purple-dark)}.illu-cocreate strong{font:800 clamp(23px,3vw,35px) var(--display);letter-spacing:-1px}.illu-cocreate span{font-size:12px;font-weight:750}
+.illu-concept-title{flex-direction:column;align-items:center;gap:3px;padding-top:24px;background:linear-gradient(145deg,#e7dbf9,#f7f2fd);color:var(--purple-dark)}.illu-concept-title strong{font:800 clamp(23px,3vw,35px) var(--display);letter-spacing:-1px}.illu-concept-title span{font-size:12px;font-weight:750}
 </style>
   </head>
 <body>
@@ -165,6 +165,24 @@ const icon = (name,size=20) => `<svg aria-hidden="true" width="${size}" height="
 const brandMark = `<svg class="brand-mark" viewBox="0 0 52 38" fill="none" aria-hidden="true"><path d="m4 29 14-18 9 13 10-17 11 22" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/></svg>`;
 const mountainScene = `<svg viewBox="0 0 270 142" fill="none" aria-hidden="true"><path d="M0 138 72 60l26 32L172 13l98 125H0Z" fill="#e3d7f8"/><path d="m82 138 86-99 21 23 17-18 64 94H82Z" fill="#cbb5ee" opacity=".66"/><path d="m136 82 36-69 40 53-26-12-14 11-14-9-22 26Z" fill="#f8f5ff"/><path d="M0 138 69 91l45 47H0Z" fill="#d3c1f0"/><path d="m69 91 19 20-14-4-11 11-8-10L69 91Z" fill="#f8f5ff"/></svg>`;
 const projects = {
+  'paytm-ghar': {
+    title:'Paytm Ghar · Recharge Engagement',
+    heading:'Can a mobile recharge lead to <em>the next household bill?</em>',
+    teaser:'A research-led prototype that helps Paytm recharge users set up and pay their first household utility bill.',
+    category:'Payments & growth', type:'concept', art:'paytm-ghar', label:'Interactive prototype',
+    demo:'https://paytm-ghar.vercel.app/',
+    repo:'https://github.com/Manisha-40/paytm-ghar', repoNote:'View source code on GitHub',
+    intro:'I explored how Paytm could help recharge-only users start paying household bills. The prototype starts at recharge success, when the user is already in the app, and shows how setting up a second bill could feel easier.',
+    facts:[['Role','Research, product design & prototyping'],['Status','Interactive case prototype'],['Audience','Recharge users who pay their household electricity bill'],['Focus','Adoption across bill categories']],
+    sections:[
+      ['Opportunity','Make the second bill easier to set up.','Recharge was already a habit. Utility bills often stayed on another app because people had already found their biller, entered a consumer ID, or set up AutoPay there. I focused on households where the person who recharges also owns the electricity bill.'],
+      ['Research','Habit and trust shaped the design.','The research combined a 49-person survey, three depth interviews, 20 moderated concept tests, and a competitive benchmark. In the survey, 31 of 49 used Google Pay as their main bills app. In concept testing, 11 of 20 chose manual setup over SMS reading, so manual entry and bill lookup by ID became first-class paths.'],
+      ['Decision','Start at recharge success.','The prototype offers a pre-filled electricity bill, shows whether the biller has confirmed payment, and explores moving an existing broadband AutoPay mandate. A monthly household view brings bills paid and bills still due together. SMS-based discovery uses a bills-only consent flow in the demo.'],
+      ['Learnings','Reduce setup effort and make payment status clear.','The research pointed to convenience, control, and confidence in payment status as reasons to try a second bill. These samples were small and directional. The prototype uses illustrative data and simulates payments and AutoPay changes without reading real SMS.'],
+      ['Next','Test the prompt before building the full flow.','I would first test interest in the recharge-success prompt, then observe whether people complete setup with help. The proposed pilot would track whether users add a bill category while maintaining recharge retention.']
+    ],
+    disclaimer:'Concept for the Paytm Product Campus Recharge Engagement case. The prototype illustrates the proposed experience and does not report live adoption or payment outcomes.'
+  },
   cocreate: {
     title:'CoCreate · Creator Marketplace',
     heading:'Can brands and creators spend less time <em>chasing the brief?</em>',
@@ -380,7 +398,8 @@ const journey = [
   }
 ];
 const art = (kind) => {
-  if(kind==='cocreate') return '<div class="case-illu illu-cocreate" aria-hidden="true"><strong>CoCreate.</strong><span>Brands × Creators</span></div>';
+  if(kind==='paytm-ghar') return '<div class="case-illu illu-concept-title" aria-hidden="true"><strong>Paytm Ghar</strong><span>Recharge &amp; household bills</span></div>';
+  if(kind==='cocreate') return '<div class="case-illu illu-concept-title" aria-hidden="true"><strong>CoCreate.</strong><span>Brands × Creators</span></div>';
   if(kind==='apparel') return `<div class="case-illu illu-apparel"><div class="mini-window"><div class="window-dots"><i></i><i></i><i></i></div><div class="chart-bars"><i></i><i></i><i></i><i></i><i></i></div><svg class="chart-line" viewBox="0 0 100 55" fill="none"><path d="m2 48 20-14 15 4 17-20 16 9L96 3" stroke="#8b4fc6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="m87 3 9 0v9" stroke="#8b4fc6" stroke-width="3"/></svg><span class="mini-bag">♧</span></div></div>`;
   if(kind==='search') return `<div class="case-illu illu-search"><div class="mini-search"><div class="searchbar">Ask a question about growth <span>⌕</span></div><div class="resultbars"><b></b><div><i style="width:91%"></i><i style="width:72%"></i></div><b></b><div><i style="width:77%"></i><i style="width:95%"></i></div></div></div></div>`;
   if(kind==='logo') return `<div class="case-illu illu-logo"><div class="mini-editor"><div class="shirt"></div><div class="copy-lines"><i></i><i></i><i></i><i></i></div></div></div>`;
